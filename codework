@@ -1,0 +1,47 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class StudentRegistrationForm {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Student Registration");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(5,2));
+
+        JLabel nameLabel = new JLabel("Name:");
+        JTextField nameField = new JTextField();
+        JLabel ageLabel = new JLabel("Age:");
+        JTextField ageField = new JTextField();
+        JLabel courseLabel = new JLabel("Course:");
+        JTextField courseField = new JTextField();
+
+        JButton submitBtn = new JButton("Submit");
+
+        submitBtn.addActionListener(e -> {
+            String name = nameField.getText();
+            String age = ageField.getText();
+            String course = courseField.getText();
+
+            if(name.isEmpty() || age.isEmpty() || course.isEmpty()) {
+                JOptionPane.showMessageDialog(frame, "All fields are required!");
+            } else {
+                JOptionPane.showMessageDialog(frame, "Student Registered Successfully!");
+            }
+        });
+
+        panel.add(nameLabel);
+        panel.add(nameField);
+        panel.add(ageLabel);
+        panel.add(ageField);
+        panel.add(courseLabel);
+        panel.add(courseField);
+        panel.add(new JLabel());
+        panel.add(submitBtn);
+
+        frame.add(panel);
+        frame.setVisible(true);
+    }
+}
