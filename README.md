@@ -1,6 +1,5 @@
 
 # Student-registration-form
-##Winter Project 2024
 A simple desktop-based Student Registration application built using Java Swing.
 
 ## Features
